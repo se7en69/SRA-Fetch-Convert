@@ -12,11 +12,12 @@ st.sidebar.markdown(""" Welcome to **SRA Fetch & Convert**, a powerful tool to d
 st.title("🔧 **Workflow**")
 st.image("workflow.png", use_container_width=True)
 
-# Path to SRA Toolkit executables
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get current script directory
-SRA_TOOLKIT_PATH = os.path.join(BASE_DIR, "sratoolkit.3.2.0-win64/bin")  # Path inside repo
-PREFETCH_PATH = os.path.join(SRA_TOOLKIT_PATH, "prefetch")
-FASTERQ_DUMP_PATH = os.path.join(SRA_TOOLKIT_PATH, "fasterq-dump")
+# Adding sra toolkit
+os.system("setup.sh")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get project directory
+SRA_TOOLKIT_PATH = os.path.join(BASE_DIR, "sratoolkit/bin")  # Path to binaries
+PREFETCH_PATH = os.path.join(SRA_TOOLKIT_PATH, "prefetch")  # No .exe
+FASTERQ_DUMP_PATH = os.path.join(SRA_TOOLKIT_PATH, "fasterq-dump")  # No .exe
 
 # Input for SRA accession numbers
 st.sidebar.header("Input Options")

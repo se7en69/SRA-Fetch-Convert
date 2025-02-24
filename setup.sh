@@ -1,0 +1,1 @@
+chmod +x sratoolkit/bin/*
